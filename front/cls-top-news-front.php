@@ -14,6 +14,7 @@ class WTN_Front {
 
 	// Adding styles and js
     function wtn_front_assets(){
+		wp_enqueue_style( $this->wtn_assets_prefix .'w3', WTN_ASSETS . 'css/'. $this->wtn_assets_prefix .'w3.css', array(), $this->wtn_vrsn );
         wp_enqueue_style( $this->wtn_assets_prefix .'front-style', WTN_ASSETS . 'css/'. $this->wtn_assets_prefix .'front-style.css', array(), $this->wtn_vrsn );
     }
 	

@@ -5,6 +5,7 @@ $wtn_setting = array( 'swtn_select_source' => 'cnn');
 if(isset($_POST['updateSettings'])){
     $wtnSettingsInfo = array(
                                 'wtn_select_source' => !empty($_POST['wtn_select_source']) ? filter_var($_POST['wtn_select_source'], FILTER_SANITIZE_STRING) : 'cnn',
+                                'wtn_layout' => (filter_var($_POST['wtn_layout'], FILTER_SANITIZE_STRING)) ? $_POST['wtn_layout'] : '',
                             );
      $wtnShowMessage = update_option('wtn_settings', serialize($wtnSettingsInfo));
      $wtn_api_settings = stripslashes_deep(unserialize(get_option('wtn_api_settings')));
@@ -40,9 +41,21 @@ $wtn_settings = stripslashes_deep(unserialize(get_option('wtn_settings')));
                     </div>
                </td>
           </tr>
+          <tr class="wtn_layout">
+               <th scope="row">
+                         <label for="wtn_layout"><?php esc_html_e('Layout:', WTN_TXT_DMN); ?></label>
+               </th>
+               <td>
+                    <input type="radio" name="wtn_layout" value="list" <?php if($wtn_settings['wtn_layout'] == "list") { echo 'checked'; } ?>>
+                    <label for="wtn_layout"><span></span><?php esc_html_e('List', WTN_TXT_DMN); ?></label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="wtn_layout" value="grid" <?php if($wtn_settings['wtn_layout'] == "grid") { echo 'checked'; } ?>>
+                    <label for="wtn_layout"><span></span><?php esc_html_e('Grid', WTN_TXT_DMN); ?></label>
+               </td>
+          </tr>
           <tr class="wtn_shortcode">
                <th scope="row">
-                    <label for="wtn_shortcode"><?php esc_html_e('Shortcode', WTN_TXT_DMN); ?></label>
+                    <label for="wtn_shortcode"><?php esc_html_e('Shortcode:', WTN_TXT_DMN); ?></label>
                </th>
                <td>
                     <input type="text" name="wtn_shortcode" id="wtn_shortcode" class="regular-text" value="[wp_top_news]" readonly />
