@@ -1,0 +1,108 @@
+.wtn-main-container {
+    border: 0px solid #DDD;
+    width: 100%;
+    min-height: 100px;
+    padding: 5px;
+}
+
+.wtn-feed-container {
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+    min-height: 50px;
+    padding: 5px 0px;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.wtn-thumbnail-container {
+    border: 0px solid #009900;
+    width: 200px;
+    min-height: 70px;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+
+.wtn-feeds {
+    flex: 1;
+    border: 0px solid #FF0000;
+    width: 69.8%;
+    min-height: 70px;
+    padding: 0;
+    margin: 0;
+}
+
+.wtn-thumbnail-container img {
+    border: 5px solid #EAEAEA;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+.wtn-feeds a.wtn-feeds-title {
+    border: 0px solid #000;
+    margin: 0!important;
+    padding: 0!important;
+    margin: 10px 0px!important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 22px!important;
+    text-decoration: none!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    color: #FFA500;
+    display: inline-block;
+}
+
+.wtn-feeds a.wtn-feeds-title:hover {
+    color: #666;
+}
+
+.wtn-feeds .wtn-feeds-description {
+    border: 0px solid #000;
+    margin: 0 0 10px 0!important;
+    padding: 0!important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: #242424;
+}
+
+.wtn-feeds span {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    line-height: 12px;
+}
+
+.wtn-main-container a.wtn-powered-by,
+.wtn-main-container a.wtn-powered-by:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+    color: #CCC;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+    padding-top: 5px;
+}
+
+@media(max-width:500px) {
+    .wtn-feed-container {
+        display: block;
+    }
+    .wtn-thumbnail-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .wtn-thumbnail-container img {
+        width: 100%;
+    }
+    .wtn-feeds {
+        width: 100%;
+    }
+}
