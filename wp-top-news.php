@@ -3,7 +3,7 @@
  * Plugin Name: 	WP Top News
  * Plugin URI:		http://wordpress.org/plugins/wp-top-news/
  * Description: 	This Worldwide Breaking News Headlines plugin will display the world famous newspaper's top/recent news/headlines in your Post/Page by using the shortcode: [wp_top_news]
- * Version: 		1.2
+ * Version: 		1.3
  * Author: 			Hossni Mubarak
  * Author URI: 		http://www.hossnimubarak.com
  * License:         GPL-2.0+
