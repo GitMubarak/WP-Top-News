@@ -1,19 +1,19 @@
 === WP Top News ===
 Contributors: mhmrajib
 Donate link: https://www.paypal.me/mhmrajib/2
-Tags: News, Worldwide News, Breaking News, Headlines, Top News, Recent News, CNN, BBC, The Guardian, Fox News
+Tags: News, Worldwide News, Breaking News, Headlines, Top News
 Requires at least: 4.6
-Tested up to: 5.3.2
-Stable tag: 1.3
+Tested up to: 5.4.1
+Stable tag: 1.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This WP Top News plugin will display the world famous newspaper's top/recent news/headlines in your Post/Page by using the shortcode: [wp_top_news]. Currently it showing news of CNN, BBC, The The Guardian (UK), Fox News and NBC News. In future more to come.
+This WP Top News plugin will display the world famous newspaper's Breaking News Headlines in your Post/Page by using the shortcode: [wp_top_news]. Currently it showing news of CNN, BBC, The The Guardian (UK), Fox News and NBC News. In future more to come.
 
 == Description ==
 
-What top stories is the BBC News running right now? [WP Top News](http://www.hossnimubarak.com) is a simple plugin that will display the world 31 famous newspaper's top/recent/headlines in your website Post/Page. 
+What top stories is the BBC News running right now? [WP Top News](http://www.hossnimubarak.com) is a simple plugin that will display the world 31 famous newspaper's Breaking News Headlines in your website Post/Page. 
 Get an API Key from newsapi.org (Free or Paid) or use the free provided one. Put the shortcode [wp_top_news] in a page/post section and you are done!
 
 **🌟 Plugin Features:**
@@ -24,9 +24,18 @@ Get an API Key from newsapi.org (Free or Paid) or use the free provided one. Put
 * Cached for 15 minutes 
 * Loading time is very fast
 * Display on both Post or Page section
+* Two layout types: List and Grid
 * Fully responsive for any device
-* Shortcoded: [wp_top_news]
+* Shortcoded
 * Simple but effective
+
+
+➡️ Useage of Shortcode:⬅️
+
+<strong> Display 10 Breaking News Headlines </strong>
+
+<pre> [wp_top_news] </pre>
+
 
 **➡️ Benefits you'll get by using this plugin:**
 
@@ -35,9 +44,10 @@ Get an API Key from newsapi.org (Free or Paid) or use the free provided one. Put
 * Improve SEO
 * No coding required
 
+
 **➡️ Limitations for the free version:**
 
-This plugin using a free API generated from newsapi.org which has the following limitations-
+This WP Top News plugin use a free API generated from newsapi.org which has the following limitations-
 
 * New articles/news/headlines available with 15 minute delay
 * 1,000 requests per day for a specific API Key
@@ -47,25 +57,30 @@ This plugin using a free API generated from newsapi.org which has the following 
 * Just go to newsapi.org and get your own API. You can buy one or use a free one by simply register their.
 * Use the API in the Plugin API key input field and you are done!
 
+
 **Demo**
-[See Demo](http://plugin.hossnimubarak.com/top-news/)
+[See Demo](http://plugin.hossnimubarak.com/wp-top-news/)
+
 
 **📋 Review / Feedback**
 
-If you find this plugin helpful, plese review/rate us. Share this plugin with your friends. This will help us to grow and work on more features. For any kind of issues or improvement please write us, and we are always ready to help you.
+If you find this Breaking News Headlines plugin helpful, plese review/rate us. Share this plugin with your friends. This will help us to grow and work on more features. For any kind of issues or improvement please write us, and we are always ready to help you.
 
 
 **🔥 Other Plugins from [HM Plugins](http://www.hossnimubarak.com)**
 
-👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Wocommerce Product Advertiser
-👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) WP Books Gallery
-👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin
 👉 [Worldwide Breaking News Headlines](https://wordpress.org/plugins/worldwide-breaking-news-headlines/) Breaking News, Headlines plugin
+👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Plugin
+👉 [Tiny Bar](https://wordpress.org/plugins/tiny-bar/) Display a bar at Top or Bottom
+👉 [WordPress Stripe Donation](https://wordpress.org/plugins/wp-stripe-donation/) This plugin allows you to collect donations via Stripe
+👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) Display Books Gallery with shortcoded
+👉 [HM Product Catalog](https://wordpress.org/plugins/hm-product-catalog/) A product catalog plugin
+👉 [HM Resume Manager](https://wordpress.org/plugins/hm-resume-manager/) A resume manager plugin
+👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Wocommerce Product Advertiser
+👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin
 👉 [WP Scroll To Post](https://wordpress.org/plugins/wp-scroll-to-post/) Display random post(Single) at the bottom right corner
 👉 [HM Recent Posts Widget](https://wordpress.org/plugins/hm-recent-posts-widget/) Ticker Post plugin
 👉 [WP Alert Bars](https://wordpress.org/plugins/wp-alert-bars/) Notification/Alert box Plugin in Post/Page
-👉 [Tiny Bar](https://wordpress.org/plugins/tiny-bar/) Display a bar at Top or Bottom
-👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Wocommerce Product Advertiser
 
 
 == Installation ==
@@ -128,8 +143,15 @@ Yes, we are working on it. Please stay with us.
 4. Put the Shortcode in a page/post
 5. Showing news in a page/post
 6. News in mobile view
+7. News in grid view
 
 == Changelog ==
+
+= 1.4 =
+* Layout option added (List and Grid view)
+
+= 1.3 =
+* Layout option added (List and Grid view)
 
 = 1.2 =
 * New 19 News Paper source included
