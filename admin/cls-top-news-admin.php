@@ -25,14 +25,6 @@ class WTN_Admin
 						'dashicons-admin-site-alt3',
 						100 
 					);
-
-		add_submenu_page( 	'wp_top_news', 
-							esc_html__('Settings', WTN_TXT_DMN), 
-							esc_html__('General Settings', WTN_TXT_DMN), 
-							'manage_options', 
-							'wtn-settings', 
-							array( $this, WTN_PRFX . 'settings' )
-						);
 		
 		add_submenu_page( 	'wp_top_news', 
 							esc_html__('API Settings', WTN_TXT_DMN), 
@@ -40,6 +32,14 @@ class WTN_Admin
 							'manage_options', 
 							'wtn-api-settings', 
 							array( $this, WTN_PRFX . 'api_settings' )
+						);
+
+		add_submenu_page( 	'wp_top_news', 
+							esc_html__('Settings', WTN_TXT_DMN), 
+							esc_html__('General Settings', WTN_TXT_DMN), 
+							'manage_options', 
+							'wtn-settings', 
+							array( $this, WTN_PRFX . 'settings' )
 						);
     }
 	

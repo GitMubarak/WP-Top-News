@@ -1,15 +1,12 @@
 <?php
 /**
- * HM Newsfeed Widget: main plugin class
+ * WP Top News: main plugin class
 */
 class WTN_Master {
 
 	protected $wtn_loader;
 	protected $wtn_version;
 	
-	/**
-	 * Class Constructor
-	*/
 	public function __construct() {
 		$this->wtn_version = WTN_VRSN;
 		add_action( 'plugins_loaded', array($this, WTN_PRFX . 'load_plugin_textdomain') );
@@ -45,9 +42,6 @@ class WTN_Master {
 		$this->wtn_loader->wtn_run();
 	}
 	
-	/**
-	 * Controlling the version
-	*/
 	public function wtn_version() {
 		return $this->wtn_version;
 	}

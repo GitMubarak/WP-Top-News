@@ -148,7 +148,13 @@ Yes, we are working on it. Please stay with us.
 == Changelog ==
 
 = 1.4 =
-* Layout option added (List and Grid view)
+* Secured API key
+* Number of news option added
+* Title word length option added
+* News description word length option added
+* Zooming news image
+* Display News Source in a news item option added
+* Display News Date in a news item option added
 
 = 1.3 =
 * Layout option added (List and Grid view)
