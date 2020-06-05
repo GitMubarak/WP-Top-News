@@ -6,6 +6,7 @@ $wtn_settings               = stripslashes_deep( unserialize( get_option('wtn_se
 $newsSource                 = ( !empty( $wtn_settings['wtn_select_source'] ) ) ? $wtn_settings['wtn_select_source'] : 'cnn';
 $wtn_news_number            = isset( $wtn_settings['wtn_news_number'] ) ? $wtn_settings['wtn_news_number'] : 10;
 $newsLayout                 = ( !empty( $wtn_settings['wtn_layout'] ) ) ? $wtn_settings['wtn_layout'] : 'list';
+$wtn_grid_columns           = isset( $wtn_settings['wtn_grid_columns'] ) ? $wtn_settings['wtn_grid_columns'] : 1;
 $wtn_title_length           = isset( $wtn_settings['wtn_title_length'] ) ? $wtn_settings['wtn_title_length'] : 4;
 $wtn_desc_length            = isset( $wtn_settings['wtn_desc_length'] ) ? $wtn_settings['wtn_desc_length'] : 18;
 $wtn_display_news_source    = isset( $wtn_settings['wtn_display_news_source'] ) ? $wtn_settings['wtn_display_news_source'] : '';
@@ -13,7 +14,11 @@ $wtn_display_date           = isset( $wtn_settings['wtn_display_date'] ) ? $wtn_
 
 $wtn_news_init_stdclass = !empty( $this->wtn_get_api_data( $newsSource, $apiKey ) ) ? $this->wtn_get_api_data( $newsSource, $apiKey ) : array();
 ?>
-
+<style>
+.wtn-main-wrapper {
+    grid-template-columns: repeat(<?php echo esc_html( $wtn_grid_columns ); ?>, 1fr);
+}
+</style>
 <?php 
 if( 'list' === $newsLayout ) { 
     ?>

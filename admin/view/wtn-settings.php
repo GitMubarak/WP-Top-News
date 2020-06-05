@@ -8,6 +8,7 @@ if( isset( $_POST['updateSettings'] ) ) {
           'wtn_select_source'           => !empty($_POST['wtn_select_source']) ? filter_var($_POST['wtn_select_source'], FILTER_SANITIZE_STRING) : 'cnn',
           'wtn_news_number'             => ( isset( $_POST['wtn_news_number'] ) && filter_var( $_POST['wtn_news_number'], FILTER_SANITIZE_NUMBER_INT ) ) ? $_POST['wtn_news_number'] : 10,
           'wtn_layout'                  => ( filter_var( $_POST['wtn_layout'], FILTER_SANITIZE_STRING ) ) ? $_POST['wtn_layout'] : '',
+          'wtn_grid_columns'            => ( isset( $_POST['wtn_grid_columns'] ) && filter_var( $_POST['wtn_grid_columns'], FILTER_SANITIZE_NUMBER_INT ) ) ? $_POST['wtn_grid_columns'] : 1,
           'wtn_title_length'            => ( isset( $_POST['wtn_title_length'] ) && filter_var( $_POST['wtn_title_length'], FILTER_SANITIZE_NUMBER_INT ) ) ? $_POST['wtn_title_length'] : 4,
           'wtn_desc_length'             => ( isset( $_POST['wtn_desc_length'] ) && filter_var( $_POST['wtn_desc_length'], FILTER_SANITIZE_NUMBER_INT ) ) ? $_POST['wtn_desc_length'] : 18,
           'wtn_display_news_source'     => ( isset( $_POST['wtn_display_news_source'] ) && filter_var( $_POST['wtn_display_news_source'], FILTER_SANITIZE_NUMBER_INT ) ) ? $_POST['wtn_display_news_source'] : '',
@@ -21,6 +22,7 @@ if( isset( $_POST['updateSettings'] ) ) {
 
 $wtn_settings            = stripslashes_deep( unserialize( get_option('wtn_settings') ) );
 $wtn_news_number         = isset( $wtn_settings['wtn_news_number'] ) ? $wtn_settings['wtn_news_number'] : 10;
+$wtn_grid_columns        = isset( $wtn_settings['wtn_grid_columns'] ) ? $wtn_settings['wtn_grid_columns'] : 1;
 $wtn_title_length        = isset( $wtn_settings['wtn_title_length'] ) ? $wtn_settings['wtn_title_length'] : 4;
 $wtn_desc_length         = isset( $wtn_settings['wtn_desc_length'] ) ? $wtn_settings['wtn_desc_length'] : 18;
 $wtn_display_news_source = isset( $wtn_settings['wtn_display_news_source'] ) ? $wtn_settings['wtn_display_news_source'] : '';
@@ -73,6 +75,15 @@ $wtn_display_date        = isset( $wtn_settings['wtn_display_date'] ) ? $wtn_set
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="wtn_layout" value="grid" <?php if($wtn_settings['wtn_layout'] == "grid") { echo 'checked'; } ?>>
                     <label for="wtn_layout"><span></span><?php esc_html_e('Grid', WTN_TXT_DMN); ?></label>
+               </td>
+          </tr>
+          <tr class="wtn_grid_columns">
+               <th scope="row">
+               <label for="wtn_grid_columns"><?php esc_html_e('Grid View Columns:', WTN_TXT_DMN); ?></label>
+               </th>
+               <td>
+               <input type="number" name="wtn_grid_columns" class="medium-text" min="1" max="5"
+                    value="<?php echo esc_attr( $wtn_grid_columns ); ?>">
                </td>
           </tr>
           <tr class="wtn_title_length">
