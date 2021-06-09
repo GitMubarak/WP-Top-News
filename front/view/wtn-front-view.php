@@ -1,6 +1,6 @@
 <?php
 $wtn_api_settings           = stripslashes_deep( unserialize( get_option('wtn_api_settings') ) );
-$apiKey                     = ( !empty( $wtn_api_settings[ 'wtn_api_key' ] ) ) ? $wtn_api_settings['wtn_api_key'] : '';
+$apiKey                     = ( ! empty( $wtn_api_settings[ 'wtn_api_key' ] ) ) ? $wtn_api_settings['wtn_api_key'] : '';
 
 $wtn_settings               = stripslashes_deep( unserialize( get_option('wtn_settings') ) );
 $newsSource                 = ( !empty( $wtn_settings['wtn_select_source'] ) ) ? $wtn_settings['wtn_select_source'] : 'cnn';
@@ -12,11 +12,32 @@ $wtn_desc_length            = isset( $wtn_settings['wtn_desc_length'] ) ? $wtn_s
 $wtn_display_news_source    = isset( $wtn_settings['wtn_display_news_source'] ) ? $wtn_settings['wtn_display_news_source'] : '';
 $wtn_display_date           = isset( $wtn_settings['wtn_display_date'] ) ? $wtn_settings['wtn_display_date'] : '';
 
-$wtn_news_init_stdclass = !empty( $this->wtn_get_api_data( $newsSource, $apiKey ) ) ? $this->wtn_get_api_data( $newsSource, $apiKey ) : array();
+$wtnDisplay = isset( $wtnAttr['display'] ) ? $wtnAttr['display'] : '';
+$wtnLayout  = isset( $wtnAttr['layout'] ) ? $wtnAttr['layout'] : '';
+$wtnDesc    = isset( $wtnAttr['description'] ) ? $wtnAttr['description'] : '';
+
+if ( $wtnLayout ) {
+    $newsLayout = $wtnLayout;
+}
+
+if ( $wtnDisplay ) {
+    $wtn_news_number = $wtnDisplay;
+}
+
+if ( $wtn_grid_columns > 3 ) {
+    $wtn_grid_columns = 3;
+}
+
+$wtn_news_init_stdclass = ! empty( $this->wtn_get_api_data( $newsSource, $apiKey ) ) ? $this->wtn_get_api_data( $newsSource, $apiKey ) : array();
 ?>
 <style>
 .wtn-main-wrapper {
     grid-template-columns: repeat(<?php echo esc_html( $wtn_grid_columns ); ?>, 1fr);
+}
+@media(max-width:500px) {
+    .wtn-main-wrapper {
+       grid-template-columns: repeat(1, 1fr);
+    }
 }
 </style>
 <?php 
@@ -36,9 +57,16 @@ if( 'list' === $newsLayout ) {
                         <a href="<?php printf('%s', esc_url($wtn_news['url'])); ?>" target="_blank" class="wtn-feeds-title">
                             <?php echo esc_html( wp_trim_words( $wtn_news['title'], $wtn_title_length, '...' ) ); ?>
                         </a>
-                        <p class="wtn-feeds-description">
-                            <?php echo esc_html( wp_trim_words( $wtn_news['description'], $wtn_desc_length, '...' ) ); ?>
-                        </p>
+
+                        <?php
+                            if ( $wtnDesc !== 'hide' ) {
+                                ?>
+                                <p class="wtn-feeds-description">
+                                    <?php echo esc_html( wp_trim_words( $wtn_news['description'], $wtn_desc_length, '...' ) ); ?>
+                                </p>
+                                <?php
+                            }
+                        ?>
                         <span>
                             <?php
                             if ( '1' === $wtn_display_news_source ) {
@@ -79,9 +107,16 @@ if( 'grid' === $newsLayout ) {
                     <a href="<?php printf('%s', esc_url($wtn_news['url'])); ?>" target="_blank">
                         <?php echo esc_html( wp_trim_words( $wtn_news['title'], $wtn_title_length, '...' ) ); ?>
                     </a>
-                    <p class="wtn-item-description">
-                        <?php echo esc_html( wp_trim_words( $wtn_news['description'], $wtn_desc_length, '...' ) ); ?>
-                    </p>
+
+                    <?php
+                        if ( $wtnDesc !== 'hide' ) {
+                            ?>
+                            <p class="wtn-item-description">
+                                <?php echo esc_html( wp_trim_words( $wtn_news['description'], $wtn_desc_length, '...' ) ); ?>
+                            </p>
+                            <?php
+                        }
+                    ?>
                     <span>
                         <?php
                         if ( '1' === $wtn_display_news_source ) {

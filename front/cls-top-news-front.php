@@ -7,13 +7,13 @@ class WTN_Front {
 	protected $wtn_vrsn;
 	protected $wtn_api_cached_data, $wtn_api, $wtn_api_data;
 
-	function __construct( $version ){
+	function __construct( $version ) {
 		$this->wtn_vrsn = $version;
 		$this->wtn_assets_prefix = substr(WTN_PRFX, 0, -1) . '-';
 	}
 
 	// Adding styles and js
-    function wtn_front_assets(){
+    function wtn_front_assets() {
 		wp_enqueue_style( $this->wtn_assets_prefix .'w3', WTN_ASSETS . 'css/'. $this->wtn_assets_prefix .'w3.css', array(), $this->wtn_vrsn );
         wp_enqueue_style( $this->wtn_assets_prefix .'front-style', WTN_ASSETS . 'css/'. $this->wtn_assets_prefix .'front-style.css', array(), $this->wtn_vrsn );
     }
@@ -22,7 +22,7 @@ class WTN_Front {
 		add_shortcode( 'wp_top_news', array( $this, 'wtn_load_shortcode_view' ) );
 	}
 	
-	public function wtn_load_shortcode_view(){
+	public function wtn_load_shortcode_view( $wtnAttr ) {
 		$output = '';
 		ob_start();
 		require_once WTN_PATH . 'front/view/' . $this->wtn_assets_prefix . 'front-view.php';
@@ -30,7 +30,7 @@ class WTN_Front {
 		return $output;
 	}
 
-	private function wtn_get_api_data($source, $api){
+	private function wtn_get_api_data( $source, $api ){
 		$this->wtn_api_cached_data = get_transient( 'wtn_api_cached_data' );
 		//delete_transient( 'wtn_api_cached_data' );
 		if( (false === $this->wtn_api_cached_data) or (empty($this->wtn_api_cached_data)) ) { //echo "New";

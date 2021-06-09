@@ -82,7 +82,7 @@ $wtn_display_date        = isset( $wtn_settings['wtn_display_date'] ) ? $wtn_set
                <label for="wtn_grid_columns"><?php esc_html_e('Grid View Columns:', WTN_TXT_DMN); ?></label>
                </th>
                <td>
-               <input type="number" name="wtn_grid_columns" class="medium-text" min="1" max="5"
+               <input type="number" name="wtn_grid_columns" class="medium-text" min="1" max="3"
                     value="<?php echo esc_attr( $wtn_grid_columns ); ?>">
                </td>
           </tr>

@@ -24,5 +24,7 @@ define( 'WTN_TXT_DMN', 'wp-top-news' );
 require_once WTN_PATH . 'inc/' . WTN_CLS_PRFX . 'master.php';
 $wtn = new WTN_Master();
 $wtn->wtn_run();
-register_deactivation_hook( __FILE__, array($wtn, WTN_PRFX . 'unregister_settings') );
+
+//  text widgets don’t process shortcodes
+add_filter('widget_text', 'do_shortcode');
 ?>

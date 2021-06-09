@@ -3,7 +3,7 @@ Contributors: mhmrajib
 Donate link: https://www.paypal.me/mhmrajib/2
 Tags: News, Breaking News, Headlines, News Headlines
 Requires at least: 4.6
-Tested up to: 5.4.1
+Tested up to: 5.7.2
 Stable tag: 1.5
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -155,7 +155,10 @@ Yes, we are working on it. Please stay with us.
 == Changelog ==
 
 = 1.5 =
-* Grid layout display column option added
+* Grid column option added (max. 3)
+* Shortcode in text widget improved
+* Display, Layout, Description shortcoded option added
+* Responsive issue fixed
 
 = 1.4 =
 * Secured API key

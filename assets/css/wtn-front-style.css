@@ -16,7 +16,7 @@
 
 .wtn-img-container {
     border: 2px solid #DDD;
-    width: 200px;
+    width: 30%;
     height: 120px;
     margin-right: 10px;
     overflow: hidden;
@@ -186,10 +186,3 @@ a.wtn-powered-by:hover {
 
 
 /* Responsive layout */
-
-@media(max-width:500px) {
-    .wtn-img-container {
-        border: 2px solid #DDD;
-        width: 100px;
-    }
-}
