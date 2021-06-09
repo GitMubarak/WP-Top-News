@@ -1,10 +1,10 @@
 === WP Top News ===
 Contributors: mhmrajib
 Donate link: https://www.paypal.me/mhmrajib/2
-Tags: News, Worldwide News, Breaking News, Headlines, Top News
+Tags: News, Breaking News, Headlines, News Headlines
 Requires at least: 4.6
 Tested up to: 5.4.1
-Stable tag: 1.4
+Stable tag: 1.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,11 +28,18 @@ Get an API Key from newsapi.org (Free or Paid) or use the free provided one. Put
 * Fully responsive for any device
 * Shortcoded
 * Simple but effective
+* Number of news option
+* Title word length option
+* News description word length option
+* Zooming news image
+* Display News Source in a news item option
+* Display News Date in a news item option
+* Grid layout display column option
 
 
 ➡️ Useage of Shortcode:⬅️
 
-<strong> Display 10 Breaking News Headlines </strong>
+<strong> Use the below Shortcode to display Headlines </strong>
 
 <pre> [wp_top_news] </pre>
 
@@ -58,8 +65,8 @@ This WP Top News plugin use a free API generated from newsapi.org which has the 
 * Use the API in the Plugin API key input field and you are done!
 
 
-**Demo**
-[See Demo](http://plugin.hossnimubarak.com/wp-top-news/)
+**Demo/ Support/ Live Chat**
+[WP Top News: See Demo](http://plugin.hossnimubarak.com/wp-top-news/)
 
 
 **📋 Review / Feedback**
@@ -146,6 +153,9 @@ Yes, we are working on it. Please stay with us.
 7. News in grid view
 
 == Changelog ==
+
+= 1.5 =
+* Grid layout display column option added
 
 = 1.4 =
 * Secured API key

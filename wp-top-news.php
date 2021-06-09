@@ -3,7 +3,7 @@
  * Plugin Name: 	WP Top News
  * Plugin URI:		http://wordpress.org/plugins/wp-top-news/
  * Description: 	This Top News plugin will display the world famous newspaper's top/recent news/headlines in your Post/Page by using the shortcode: [wp_top_news]
- * Version: 		1.4
+ * Version: 		1.5
  * Author: 			Hossni Mubarak
  * Author URI: 		http://www.hossnimubarak.com
  * License:         GPL-2.0+
@@ -18,7 +18,7 @@ define( 'WTN_LANG', plugins_url( '/languages/', __FILE__ ) );
 define( 'WTN_SLUG', plugin_basename( __FILE__ ) );
 define( 'WTN_PRFX', 'wtn_' );
 define( 'WTN_CLS_PRFX', 'cls-top-news-' );
-define( 'WTN_VRSN', '1.4' );
+define( 'WTN_VRSN', '1.5' );
 define( 'WTN_TXT_DMN', 'wp-top-news' );
 
 require_once WTN_PATH . 'inc/' . WTN_CLS_PRFX . 'master.php';
